@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display:block;
+  position: fixed;
+  z-index: 12;
+  width: 100%;
+  background: #292c2f;
+  color: rgba(255, 255, 255, 0.5);
+  height: 50pt;
+}
+
+h1 {
+  display: inline-block;
+  position: absolute;
+  padding: 4pt;
+}
+
+.header > input, 
+.header > label 
+{
+  display: none;
+}
+
+/* NAVIGATION */
+nav {
+  display: inline-block;
+  float: right;
+  width: 50%;
+  margin: 10pt auto;
+}
+nav > ul {
+  list-style: none;
+  text-align: right;
+}
+nav > ul > li {
+  display: inline-block;
+}
+nav > ul > li > a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 8px;
+}
+nav > ul > li > a,
+nav > ul > li > a:after,
+nav > ul > li > a:before {
+  transition: all .5s;
+}
+nav > ul > li > a:hover {
+  color: #555;
+}
+
+
+
+/* Circle */
+nav.circle > ul > li > a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+nav.circle > ul > li > a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle > ul > li > a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+}
+
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+
+.about_us{
+  display: block;
+  width: 80%;
+  min-height: 60vh;
+  background: #34495e;
+  color: rgba(255, 255, 255, 0.7);
+  /* vertical-align: middle; */
+  text-align: left;
+  position: relative;
+  padding: 150px 10% 50px 10%;
+}
+
+.about_us > h2{
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32px;
+  line-height: 31px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0 auto 30px;
+}
+
+.about_us > span {
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.75;
+  margin: 20px auto 10px;
+}
+
+.about_us > p{
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  margin: 0 auto 10px;
+}
+
+.about_us > img{
+  display: block;
+  margin-bottom: 20px;
+}
+
+.about_us > .mission{
+  color: rgba(255, 255, 255, 1);
+  display: blcok;
+  width: 60%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: rgba(92,188,224,0.4);
+  margin-left: 20%;
+  padding: 5px 10px; 
+
+}
+
+.about_us > .mission > span{
+  display: block;
+  margin: 0 auto 10px;
+  font-size: x-large;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.75;
+}
+.about_us > .mission > p{
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto 10px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+
+
+.footer {
+  background: #485b6e; 
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  width: 100%;
+  position: auto;
+}
+.footer > .address {
+  display: inline-block;
+  position: relative;
+  margin-left: 10%;
+  margin-top: 50px;
+  width: auto;
+  /* float: left; */
+}
+.footer > .address > span{
+  display: block;
+  padding-top: 10px;
+}
+.footer > .phone {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  margin-right: 10%;
+  margin-top: 50px;
+  /* float: right; */
+}
+.footer > .phone > span{
+  display: block;
+  padding-top: 10px;
+  text-align: right;
+}
+.footer > .email {
+  margin-right: 10%;
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  /* float: right; */
+}
+.footer > .email > .email{
+  display: block;
+  padding-top: 10px;
+  text-align: right;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+.footer > .copyright {
+  display: inline-block;
+  margin: 70px 0 60px 10%;
+  width: 80%;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  
+  .header > #nav + label + nav.circle {
+    display: none;
+    width: 120px;
+    padding: 10px;
+    background-color :#292c2f;
+  }
+
+  .header > #nav:checked + label + nav.circle {
+    display: block;
+  }
+
+
+  .header > nav.circle> ul {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .header > nav.circle > ul> li {
+    display: block;
+    /* font-size 80%; */
+  }  
+
+  .header > nav.circle {
+    position: absolute;
+    top: 54px;
+    right: 0;
+    z-index: 100;
+    text-align: left;
+  }   
+
+  .header > label {
+    display: inline-block;
+    /* float: right; */
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+  }
+}
+        body{
+           background-color: rgb(248, 248, 248);
+            /* background-image: url("https://cdn.xxl.thumbs.canstockphoto.com/about-us-3d-people-man-person-pointing-a-text-about-us-stock-illustration_csp14197663.jpg"); */
+        }
+        .container {
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/bg.png);
+    background-position: center;
+    background-size: cover;
+    padding-right: 5%;
+    padding-left: 3%;
+    box-sizing: border-box;
+    position: relative;
+}
+.navbar {
+    width: 100%;
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+nav {
+    flex: 1;
+    padding-left: 660px;
+}
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <nav>
+               
+            </nav>
+        </div>  
+        <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+
+<div class= "header">
+  
+  <input type="checkbox" id="nav" />
+  <!-- <label for="nav" class="material-icons">dehaze</label> -->
+  <nav class="circle">
+    <ul>
+        <li><a href="sparks.html">HOME</a></li>
+<li><a href="about.html">ABOUT US</a></li>
+<li><a href="contact.html">CONTACT US</a></li>
+    </ul>
+  </nav>
+  
+</div>
+
+<div class="about_us">
+  <!-- <h2>SPARKS FOUNDATION</h2> -->
+  <!-- <div class="mission"> -->
+   
+  
+    <p>
+        We have a strong network of partnering non-profit organizations <br> working in most exciting and isolated locations in India.
+    </p>
+
+    <ul>
+        <li>We connect those who want to help to those who seek help</li>
+        <li>We have an experience on more than a decade <br> in bridging the gaps of information and organisations.</li>
+        <li> Our dedicated team is a pile of people <br> from varied areas and skill set. </li>
+        <li>With our partnering concerns, you can be rest assured <br> that your efforts are utilised properly and going in right direction.</li>
+    </ul>
+    <p>As the team gradually increased its field presence and activities <br> it was felt necessary to give a legal identity <br> and formal structure to the organization.</p>
+
+</div>
+
+
+</body>
+</html>
